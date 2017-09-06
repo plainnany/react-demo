@@ -11,7 +11,7 @@ class Hello extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-intro">
-          hello React!<small className="Hello-info">this is from Hello.js</small>
+          hello {this.props.name}!<small className="Hello-info">this is from Hello.js</small>
         </p>
       </div>
     );

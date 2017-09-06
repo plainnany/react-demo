@@ -13,5 +13,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://plainnany.github.io/react-demo/build/"
+  "homepage": "https://plainnany.github.io/react-demo/build"
 }

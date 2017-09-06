@@ -3,3 +3,8 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.Hello-info{
+  color: grey;
+  font-size: 14px;
+  padding-left: 10px;
+}

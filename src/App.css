@@ -22,3 +22,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.App > .todoList> li:nth-child(odd){
+  background: #eee;
+}
+.App > .todoList> li:nth-child(even){
+  background: transparent;
+}

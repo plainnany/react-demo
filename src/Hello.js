@@ -3,16 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 
 class Hello extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      date: new Date()
+    }
+    setInterval(()=>{ 
+      this.state = {
+        date: new Date() // 更新 date
+      }
+    })
+  }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          hello {this.props.name}!<small className="Hello-info">this is from Hello.js</small>
-        </p>
+      <div>
+        <h1>Hello, {this.props.name}</h1>
+        <h2>{this.state.date.toString()}</h2>
       </div>
     );
   }

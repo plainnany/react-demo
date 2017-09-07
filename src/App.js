@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
-import TodoInput from './TodoInput.js'
-import TodoItem from './TodoItem.js'
-import 'normalize.css'
+import TodoInput from './TodoInput.js';
+import TodoItem from './TodoItem.js';
+import 'normalize.css';
+import './index.css';
+import './reset.css';
 
 class App extends Component {
   constructor(props) {

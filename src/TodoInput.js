@@ -4,9 +4,10 @@ import React, { Component } from 'react';
 class TodoInput extends Component{
     render() {
         return <input type="text" value={this.props.content} 
-        onChange={this.changeTitle.bind(this)}
+        onChange={this.changeTitle.bind(this)}  
         onKeyPress={this.submit.bind(this)} // 将submit中的this指的为TodoInput
         />  
+        // onChange，onKeyPress是事件名
     }
     submit(e) {
         if (e.key === 'Enter') {

@@ -5,7 +5,6 @@ import TodoItem from './TodoItem.js';
 import 'normalize.css';
 import './index.css';
 import './reset.css';
-import * as localStore from './localStore.js'
 
 
 class App extends Component {
@@ -13,7 +12,7 @@ class App extends Component {
     super(props)
     this.state={
       newTodo: '',
-      todoList: localStore.load('todoList') || []
+      todoList: []
     }
 
   }
@@ -43,7 +42,6 @@ class App extends Component {
     )
   }
   componetDidUpdate() {
-    localStore.save('todoList', this.state.todoList)
   }
 
   addTodo(event) {

@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import TodoInput from './TodoInput.js';
-import TodoItem from './TodoItem.js';
-import 'normalize.css';
-import './index.css';
-import './reset.css';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import TodoInput from './TodoInput'
+import TodoItem from './TodoItem'
+import UserDialog from './UserDialog'
+import 'normalize.css'
+import './index.css'
+import './reset.css'
 
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
         <ol className="todoList">
           {todos}
         </ol>
+        <UserDialog />
       </div>
     )
   }

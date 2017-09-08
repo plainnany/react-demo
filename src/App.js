@@ -13,6 +13,15 @@ const appKey = '4nNH1lHoxSJl0epADF0Muu2v'
 AV.init({ appId, appKey })
 
 
+var TestObject = AV.Object.extend('TestObject')
+var testObject = new TestObject()
+testObject.save({
+  words: 'Hello World!'
+}).then(function(object) {
+  alert('LeanCloud Rocks!')
+})
+
+
 class App extends Component {
   constructor(props) {
     super(props)

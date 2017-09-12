@@ -25,7 +25,7 @@ export function signUp(username, password, successFn, errorFn){
 }
 export function getCurrentUser(){
     let user = AV.User.current()
-    user ? getUserFromAVUser(user) : null
+    return user ? getUserFromAVUser(user) : null
 }
 function getUserFromAVUser(AVUser){
     return {
@@ -34,4 +34,8 @@ function getUserFromAVUser(AVUser){
         ...AVUser.attributes   // 把 AVUser的attributes属性拷贝到getUserFromAVUser这个对象
     }
 }
+export function signOut(){
+    AV.User.logOut()
+    return undefined
+  }
  

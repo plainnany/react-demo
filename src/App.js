@@ -3,7 +3,7 @@ import logo from './logo.svg'
 import TodoInput from './TodoInput'
 import TodoItem from './TodoItem'
 import UserDialog from './UserDialog'
-import {getCurrentUser} from './leanCloud'
+import {getCurrentUser,signOut} from './leanCloud'
 import 'normalize.css'
 import './index.css'
 import './reset.css'
@@ -32,7 +32,10 @@ class App extends Component {
       })
     return (
       <div className="App">
-        <h1>{this.state.user.username || '我'}的待办</h1>
+        <h1>
+          {this.state.user.username || '我'}的待办
+          {this.state.user.id ? <button onClick={this.signOut.bind(this)}>登出</button> : null}
+        </h1>
         <div className="inputWrapper">
           <TodoInput content={this.state.newTodo}
             onChange={this.changeTitle.bind(this)}
@@ -81,6 +84,12 @@ class App extends Component {
   onSignUp(user){
     let stateCopy = JSON.parse(JSON.stringify(this.state))
     stateCopy.user = user
+    this.setState(stateCopy)
+  }
+  signOut(){
+    //signOut()
+    let stateCopy = JSON.parse(JSON.stringify(this.state))
+    stateCopy.user = {}
     this.setState(stateCopy)
   }
 }

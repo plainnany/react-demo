@@ -22,12 +22,16 @@ export function signUp(username, password, successFn, errorFn){
     
     return undefined
  
- }
- function getUserFromAVUser(AVUser){
+}
+export function getCurrentUser(){
+    let user = AV.User.current()
+    user ? getUserFromAVUser(user) : null
+}
+function getUserFromAVUser(AVUser){
     return {
 
         id: AVUser.id,
         ...AVUser.attributes   // 把 AVUser的attributes属性拷贝到getUserFromAVUser这个对象
     }
-  }
+}
  

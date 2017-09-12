@@ -11,7 +11,8 @@ import './reset.css'
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state={
+    this.state = {
+      user: {},
       newTodo: '',
       todoList: []
     }
@@ -19,27 +20,27 @@ class App extends Component {
   }
   render() {
     let todos = this.state.todoList
-    .filter((item)=> !item.deleted)
-    .map((item,index)=>{
-      return (
-        <li key={index}>
-          <TodoItem todo = {item} onToggle={this.toggle.bind(this)} 
-          onDelete={this.delete.bind(this)} />
-        </li>
-      )
-    })
+      .filter((item) => !item.deleted)
+      .map((item, index) => {
+        return (
+          <li key={index}>
+            <TodoItem todo={item} onToggle={this.toggle.bind(this)}
+              onDelete={this.delete.bind(this)} />
+          </li>
+        )
+      })
     return (
       <div className="App">
-        <h1>我的待办</h1>
+        <h1>{this.state.user.username || '我'}的待办</h1>
         <div className="inputWrapper">
-          <TodoInput content={this.state.newTodo} 
-          onChange={this.changeTitle.bind(this)}
-          onSubmit={this.addTodo.bind(this)} />
+          <TodoInput content={this.state.newTodo}
+            onChange={this.changeTitle.bind(this)}
+            onSubmit={this.addTodo.bind(this)} />
         </div>
         <ol className="todoList">
           {todos}
         </ol>
-        <UserDialog />
+        <UserDialog onSignUp={this.onSignUp.bind(this)}/>
       </div>
     )
   }
@@ -57,24 +58,28 @@ class App extends Component {
       newTodo: '',
       todoList: this.state.todoList
     })
-    
+
   }
 
   changeTitle(event) {
     this.setState({
       newTodo: event.target.value,
       todoList: this.state.todoList
-      
+
     })
   }
 
-  toggle(e,todo) {
+  toggle(e, todo) {
     todo.status = todo.status === 'completed' ? '' : 'completed'
     this.setState(this.state)
   }
-  delete(e,todo) {
+  delete(e, todo) {
     todo.deleted = true
-    this.setState(this.state) 
+    this.setState(this.state)
+  }
+  onSignUp(user){
+    this.state.user = user
+    this.setState(this.state)
   }
 }
 
@@ -82,7 +87,8 @@ export default App;
 
 let id = 0
 
-function idMaker(){
+function idMaker() {
+
   id += 1
   return id
 }

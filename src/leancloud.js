@@ -25,8 +25,9 @@ export function signUp(username, password, successFn, errorFn){
  }
  function getUserFromAVUser(AVUser){
     return {
-      id: AVUser.id,
-      ...AVUser.attributes   // 把 AVUser的attributes属性拷贝到getUserFromAVUser这个对象
+
+        id: AVUser.id,
+        ...AVUser.attributes   // 把 AVUser的attributes属性拷贝到getUserFromAVUser这个对象
     }
   }
  

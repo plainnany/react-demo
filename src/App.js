@@ -44,8 +44,8 @@ class App extends Component {
         <ol className="todoList">
           {todos}
         </ol>
-        {this.state.user.id ? null : <UserDialog onSignUp={this.onSignUp.bind(this)}
-        onSignIn={this.onSignIn.bind(this)} />}
+        {this.state.user.id ? null : <UserDialog onSignUp={this.onSignUpOrSignIn.bind(this)}
+        onSignIn={this.onSignUpOrSignIn.bind(this)} />}
       </div>
     )
   }
@@ -82,12 +82,7 @@ class App extends Component {
     todo.deleted = true
     this.setState(this.state)
   }
-  onSignUp(user){
-    let stateCopy = JSON.parse(JSON.stringify(this.state))
-    stateCopy.user = user
-    this.setState(stateCopy)
-  }
-  onSignIn(user){
+  onSignUpOrSignIn(user){
     let stateCopy = JSON.parse(JSON.stringify(this.state))
     stateCopy.user = user
     this.setState(stateCopy)

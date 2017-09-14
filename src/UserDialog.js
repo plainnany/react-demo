@@ -28,7 +28,15 @@ export default class UserDialog extends Component{
             this.props.onSignUp.call(null, user)
         }
         let error = (error)=>{
-            alert(error)
+            
+            switch(error.code){
+                case 210:
+                    alert('用户名与密码不匹配')
+                    break
+                default:
+                    alert(error)
+                    break
+            }
         }
         signIn(username, password, success, error)
     }
@@ -39,7 +47,14 @@ export default class UserDialog extends Component{
             this.props.onSignUp.call(null, user)
         }
         let error = (error)=>{
-            alert(error)
+            switch(error.code){
+                case 202:
+                    alert('用户名已被占用')
+                    break
+                default:
+                    alert(error)
+                    break
+            }
         }
         signUp(username, password, success, error)
     }
@@ -76,7 +91,7 @@ export default class UserDialog extends Component{
                     onChange={this.changeFormData.bind(this,'username')}/>
                 </div>
                 <div className="row">
-                    <label>密码mamama</label>
+                    <label>密码</label>
                     <input type="password" value={this.state.formData.password} 
                     onChange={this.changeFormData.bind(this,'password')}/>
                 </div>

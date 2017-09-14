@@ -83,14 +83,14 @@ class App extends Component {
     this.setState(this.state)
   }
   onSignUpOrSignIn(user){
-    let stateCopy = json(this.state)
+    let stateCopy = JSON.parse(JSON.stringify(this.state))
     stateCopy.user = user
     this.setState(stateCopy)
   }
   signOut(user){
     signOut()   
     // 此处不懂 当注册成功再登出后，刷新页面还是之前未登出的页面，加上signOut()登出就是真正登出
-    let stateCopy = json(this.state)
+    let stateCopy = JSON.parse(JSON.stringify(this.state))  // 怎样封装这个函数？
     stateCopy.user = {}
     this.setState(stateCopy)
   }
@@ -108,4 +108,5 @@ function idMaker() {
 
 function json(data){
   JSON.parse(JSON.stringify(data))
+  console.log(this)
 }

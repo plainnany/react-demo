@@ -13,8 +13,8 @@ export function signUp(mail,username, password, successFn, errorFn){
     // 设置密码
     user.setPassword(password)
     // 设置邮箱
-    user.setEmail(email)
-    
+    user.setEmail(mail)
+
     user.signUp().then(function (loginedUser) {
         let user = getUserFromAVUser(loginedUser)
         successFn.call(null, user)

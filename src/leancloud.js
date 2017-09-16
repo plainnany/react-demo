@@ -5,6 +5,29 @@ const appKey = '4nNH1lHoxSJl0epADF0Muu2v'
 AV.init({ appId, appKey })
 export default AV
 
+export const TodoModel = {
+    create({status, title, deleted}, successFn, errorFn){
+        let Todo = AV.Object.extend('Todo')   // 数据为何没有保存到leancloud Todo中，而是在_User中
+        let todo = new Todo()
+        todo.set('title', title)
+        todo.set('status', status)
+        todo.set('deleted', deleted)
+        todo.save().then(function (response) {
+            successFn.call(null, response.id)
+            alert('success')
+        }, function (error) {
+            errorFn && errorFn.call(null, error)
+        });
+    
+    },
+    update(){
+  
+    },
+    destroy(){
+  
+    }
+}
+
 export function signUp(mail,username, password, successFn, errorFn){
     // 新建 AVUser 对象实例
     var user = new AV.User()

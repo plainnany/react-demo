@@ -6,6 +6,19 @@ AV.init({ appId, appKey })
 export default AV
 
 export const TodoModel = {
+    getByUser(user, successFn, errorFn){
+        // 文档见 https://leancloud.cn/docs/leanstorage_guide-js.html#批量操作
+        let query = new AV.Query('Todo')
+        query.find().then((response) => {
+            console.log(response)
+            let array = response.map((t) => {
+                return {id: t.id, ...t.attributes}
+            })
+            successFn.call(null, array)
+        }, (error) => {
+            errorFn && errorFn.call(null, error)
+        })
+    },
     create({status, title, deleted}, successFn, errorFn){
         let Todo = AV.Object.extend('Todo')   // 数据为何没有保存到leancloud Todo中，而是在_User中
         let todo = new Todo()

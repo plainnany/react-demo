@@ -20,7 +20,7 @@ export const TodoModel = {
         })
     },
     create({status, title, deleted}, successFn, errorFn){
-        let Todo = AV.Object.extend('Todo')   // 数据为何没有保存到leancloud Todo中，而是在_User中
+        let Todo = AV.Object.extend('Todo')  // 这个是用户输入Todo存储的数据
         let todo = new Todo()
         todo.set('title', title)
         todo.set('status', status)
@@ -45,8 +45,15 @@ export const TodoModel = {
     update(){
   
     },
-    destroy(){
-  
+    destroy(todoId, successFn, errorFn){
+        // 文档 https://leancloud.cn/docs/leanstorage_guide-js.html#删除对象
+        let todo = AV.Object.createWithoutData('Todo', todoId)
+        todo.destroy().then(function (response) {
+            successFn && successFn.call(null)
+        }, function (error) {
+            errorFn && errorFn.call(null, error)
+        })
+      
     }
 }
 

@@ -79,7 +79,7 @@ export default class UserDialog extends Component{
     }
     returnSignIn(){
         let stateCopy = JSON.parse(JSON.stringify(this.state))
-        stateCopy.selected = 'signInOrSignUp'
+        stateCopy.selectedTab = 'signInOrSignUp'
         this.setState(stateCopy)
     }
     resetPassword(e){

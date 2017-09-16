@@ -17,6 +17,8 @@
 .UserDialog .signInOrSignUp > .panes { padding: 0 1em 1em; }
 
 .UserDialog > .panes { padding: 0 1em 1em; }
+.UserDialog .forgotPassword > h3 { padding: 1em; }
+.UserDialog .forgotPassword > form { padding: 0 1em 1em; }
 
 .UserDialog form>.row{ display: flex; padding: .3em 0; }
 .UserDialog form>.row>label:first-child{ width: 4em; }

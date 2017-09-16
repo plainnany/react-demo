@@ -47,5 +47,12 @@ function getUserFromAVUser(AVUser){
 export function signOut(){
     AV.User.logOut()
     return undefined
-  }
+}
+export function sendPasswordResetEmail(mail, successFn, errorFn){
+    AV.User.requestPasswordReset(mail).then(function (success) {
+        successFn.call() 
+    }, function (error) {
+        console.dir(error)
+    })
+}
  

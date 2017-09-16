@@ -84,7 +84,7 @@ export default class UserDialog extends Component{
     }
     resetPassword(e){
         e.preventDefault()
-        //sendPasswordResetEmail(this.state.formData.mail)    
+        sendPasswordResetEmail(this.state.formData.mail)    
     }
     render() {
         let signInOrSignUp = (

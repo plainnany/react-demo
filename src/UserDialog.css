@@ -1,6 +1,7 @@
 .UserDialog-Wrapper{ 
     position: fixed; top: 0; left: 0; bottom: 0; right: 0; 
     display: flex; justify-content: center; align-items: center;
+    background: rgba(0,0,0,.4);
 }
 .UserDialog{
     border: 1px solid;
@@ -18,4 +19,5 @@
 
 .UserDialog form>.row{ display: flex; padding: .3em 0; }
 .UserDialog form>.row>label:first-child{ width: 4em; }
-.UserDialog form>.row.actions{ padding-left: 4em; }
+.UserDialog form>.row.actions{ padding-left: 4em; display: flex; align-items: center; }
+.UserDialog form>.row.actions button{ margin-right: .5em; }

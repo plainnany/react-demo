@@ -5,7 +5,7 @@ const appKey = '4nNH1lHoxSJl0epADF0Muu2v'
 AV.init({ appId, appKey })
 export default AV
 
-export function signUp(username, password, successFn, errorFn){
+export function signUp(mail,username, password, successFn, errorFn){
     // 新建 AVUser 对象实例
     var user = new AV.User()
     // 设置用户名
@@ -13,6 +13,8 @@ export function signUp(username, password, successFn, errorFn){
     // 设置密码
     user.setPassword(password)
     // 设置邮箱
+    user.setEmail(email)
+    
     user.signUp().then(function (loginedUser) {
         let user = getUserFromAVUser(loginedUser)
         successFn.call(null, user)

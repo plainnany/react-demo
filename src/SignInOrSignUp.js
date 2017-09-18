@@ -24,15 +24,19 @@ export default class SignInOrSignUp extends Component{
                     {this.state.selected === 'signUp' ? 
                         <SignUpForm formData={this.props.formData} 
                             onSubmit={this.props.onSignUp} 
-                            onChange={this.props.onChange} /> : null}
+                            onChange={this.props.onChange} 
+                            onSelected={this.state.selected}
+                            switch={this.switch.bind(this)}/> : null}
                     {this.state.selected === 'signIn' ? 
                         <SignInForm formData={this.props.formData} 
                             onSubmit={this.props.onSignIn} 
                             onChange={this.props.onChange}  
                             onForgotPassword={this.props.onForgotPassword}
+                            onSelected={this.state.selected}
+                            switch={this.switch.bind(this)}
                         />: null}
                 </div>
-                <nav>
+                {/* <nav>
                     <label>
                         <input type="radio" value="signUp" checked={this.state.selected === 'signUp'} 
                         onChange={this.switch.bind(this)} /> 
@@ -44,7 +48,7 @@ export default class SignInOrSignUp extends Component{
                         登录
                         
                     </label>
-                </nav>
+                </nav> */}
             </div>
         )
     }

@@ -15,12 +15,33 @@
 .UserDialog .signInOrSignUp > nav:first-child{ padding: 1em; margin-left: -2em;}
 .UserDialog .signInOrSignUp > nav:first-child label{ margin-left: 2em; cursor: pointer;}
 .UserDialog .signInOrSignUp > .panes { padding: 0 1em 1em; }
+.UserDialog .signInOrSignUp h3{
+    color: #03A9F4;
+    font-weight: normal;
+    text-align: center;
+    padding: 30px 0 15px 0;
+}
 
 .UserDialog > .panes { padding: 0 1em 1em; }
 .UserDialog .forgotPassword > h3 { padding: 1em; }
 .UserDialog .forgotPassword > form { padding: 0 1em 1em; }
 
-.UserDialog form>.row{ display: flex; padding: .3em 0; }
+
+.UserDialog form>.row{ display: flex; padding: 1em 0; }
 .UserDialog form>.row>label:first-child{ width: 4em; }
-.UserDialog form>.row.actions{ padding-left: 4em; display: flex; align-items: center; }
-.UserDialog form>.row.actions button{ margin-right: .5em; }
+.UserDialog form>.row.actions{display: flex; align-items: center; }
+.UserDialog form>.row.actions button{
+    width: 100%;
+    padding: 10px 0;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    outline: none;
+}
+.UserDialog form>.row input{
+    outline: none;
+    width: 100%;
+    line-height: 32px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}

@@ -6,7 +6,7 @@ export default class SignInOrSignUp extends Component{
     constructor(props){
         super(props)
         this.state = {
-            selected: 'signUp'
+            selected: 'signIn'
         }
     }
     switch(e){
@@ -18,6 +18,20 @@ export default class SignInOrSignUp extends Component{
     render(){
         return (
             <div className="signInOrSignUp">
+                <h3>Welcome</h3>
+                
+                <div className="panes">
+                    {this.state.selected === 'signUp' ? 
+                        <SignUpForm formData={this.props.formData} 
+                            onSubmit={this.props.onSignUp} 
+                            onChange={this.props.onChange} /> : null}
+                    {this.state.selected === 'signIn' ? 
+                        <SignInForm formData={this.props.formData} 
+                            onSubmit={this.props.onSignIn} 
+                            onChange={this.props.onChange}  
+                            onForgotPassword={this.props.onForgotPassword}
+                        />: null}
+                </div>
                 <nav>
                     <label>
                         <input type="radio" value="signUp" checked={this.state.selected === 'signUp'} 
@@ -31,18 +45,6 @@ export default class SignInOrSignUp extends Component{
                         
                     </label>
                 </nav>
-                <div className="panes">
-                    {this.state.selected === 'signUp' ? 
-                        <SignUpForm formData={this.props.formData} 
-                            onSubmit={this.props.onSignUp} 
-                            onChange={this.props.onChange} /> : null}
-                    {this.state.selected === 'signIn' ? 
-                        <SignInForm formData={this.props.formData} 
-                            onSubmit={this.props.onSignIn} 
-                            onChange={this.props.onChange}  
-                            onForgotPassword={this.props.onForgotPassword}
-                        />: null}
-                </div>
             </div>
         )
     }

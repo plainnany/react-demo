@@ -7,7 +7,8 @@
     display: flex; 
     justify-content: center; 
     align-items: center;
-    background: rgba(0,0,0,.4);
+    background: url(http://oqap7v3zs.bkt.clouddn.com/todomountain-2115169.jpg);
+    background-size: cover;
 }
 .UserDialog{
     border: 1px solid;
@@ -24,7 +25,6 @@
 .UserDialog .signInOrSignUp > .panes { padding: 0 1em 1em; }
 .UserDialog .signInOrSignUp h3{
     color: #03A9F4;
-    font-weight: normal;
     text-align: center;
     padding: 30px 0 15px 0;
 }
@@ -34,7 +34,6 @@
     padding: 1em;
     font-size: 18px;
     color: #000;
-    font-weight: normal;
     text-align: center;
 }
 .UserDialog .forgotPassword > form { padding: 0 1em 1em; }

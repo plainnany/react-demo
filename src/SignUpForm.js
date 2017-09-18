@@ -19,13 +19,15 @@ export default function (props){
             <div className="row actions">
                 <button type="submit">注册</button>
             </div>
-
-            <label>
-                <input type="radio" value="signIn" checked={props.onSelected === 'signIn'} 
-            onChange={props.switch} /> 
-               已有账号？请登录
-        
-            </label>
+            <div className="row login">
+                已有账号？请
+                <label>
+                    <input type="radio" value="signIn" checked={props.onSelected === 'signIn'} 
+                onChange={props.switch} /> 
+                    登录
+                </label>
+            </div>
+            
         </form>
         
         

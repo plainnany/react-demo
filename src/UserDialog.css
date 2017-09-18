@@ -17,9 +17,10 @@
     border: 1px solid #aaa;
     box-shadow: 0 0 1em hsla(0,0%,0%,0.35);
 }
-
-.UserDialog .signInOrSignUp > nav:first-child{ padding: 1em; margin-left: -2em;}
-.UserDialog .signInOrSignUp > nav:first-child label{ margin-left: 2em; cursor: pointer;}
+.UserDialog .signInOrSignUp label{ cursor: pointer; }
+.UserDialog .signInOrSignUp label input{ display: none; }
+/* .UserDialog .signInOrSignUp > nav:first-child{ padding: 1em; margin-left: -2em;}
+.UserDialog .signInOrSignUp > nav:first-child label{ margin-left: 2em; cursor: pointer;} */
 .UserDialog .signInOrSignUp > .panes { padding: 0 1em 1em; }
 .UserDialog .signInOrSignUp h3{
     color: #03A9F4;
@@ -27,22 +28,19 @@
     text-align: center;
     padding: 30px 0 15px 0;
 }
-.UserDialog .signIn .actions a{
-    display: block;
-    width: 100%;
-    text-align: right;
-    font-size: 12px;
-    color: #ccc;
-    line-height: 32px;
-}
 
 .UserDialog > .panes { padding: 0 1em 1em; }
-.UserDialog .forgotPassword > h3 { padding: 1em; }
+.UserDialog .forgotPassword > h3 { 
+    padding: 1em;
+    font-size: 18px;
+    color: #000;
+    font-weight: normal;
+    text-align: center;
+}
 .UserDialog .forgotPassword > form { padding: 0 1em 1em; }
 
 
-.UserDialog form>.row{ display: flex; padding: 1em 0; flex-direction: column;}
-.UserDialog form>.row>label:first-child{ width: 4em; }
+.UserDialog form>.row{ display: flex; padding: 1em 0;}
 .UserDialog form>.row.actions{display: flex; align-items: center; }
 .UserDialog form>.row.actions button{
     width: 100%;
@@ -58,4 +56,16 @@
     line-height: 32px;
     border: none;
     border-bottom: 1px solid #ccc;
+}
+.forgotPassword{
+    text-align: right;
+    font-size: 14px;
+    color: #ccc;
+}
+.register,.login{
+    width: 100%;
+    justify-content: center;
+}
+.register label,.login label{
+    color: rgb(41, 174, 212);
 }

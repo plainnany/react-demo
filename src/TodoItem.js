@@ -11,9 +11,9 @@ class TodoItem extends Component {
                         onChange={this.toggle.bind(this)} />
                     <span className="icon-unchecked iconfont"></span>
                     <span className="icon-checked iconfont"></span>
-                    
+                    <span className="title">{this.props.todo.title}</span>
                 </label>
-                <span className="title">{this.props.todo.title}</span>
+                
                 <button onClick={this.delete.bind(this)} className="icon-delete iconfont"></button>
             </div>
         )

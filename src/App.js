@@ -38,25 +38,25 @@ class App extends Component {
               onDelete={this.delete.bind(this)} />
           </li>
         )
-      })
-    return (
-      <div className="App">
-        <div className="aside">
-          <div className="topbar"></div>
-          <div className="account">
-            
-            <span>{this.state.user.username || '我'}</span>
-            {this.state.user.id ? <span className="icon-logout iconfont" 
-            onClick={this.signOut.bind(this)}></span> : null}
-          </div>
-          <div className="aside-content">
-            <p><span className="icon-home iconfont"></span>我的一天</p>
-            <p><span className="icon-todo iconfont"></span>Todo</p>
-          </div>
+    })
+    let UserlogIn = 
+        <div className="loginWrapper">
+          <div className="aside">
+            <div className="topbar">欢迎回来！</div>
+            <div className="account">
+              
+              <span>{this.state.user.username || '我'}</span>
+              {this.state.user.id ? <span className="icon-logout iconfont" 
+              onClick={this.signOut.bind(this)}></span> : null}
+            </div>
+            <div className="aside-content">
+              <p><span className="icon-home iconfont"></span>我的一天</p>
+              <p><span className="icon-todo iconfont"></span>Todo</p>
+            </div>
         </div>
         <div className="main">
           <h1>
-            {this.state.user.username || '我'}的待办
+            {this.state.user.username || '我'}的待办事项
            
           </h1>
           <div className="inputWrapper">
@@ -68,9 +68,14 @@ class App extends Component {
           <ol className="todoList">
             {todos}
           </ol>
-          {this.state.user.id ? null : <UserDialog onSignUp={this.onSignUpOrSignIn.bind(this)}
-          onSignIn={this.onSignUpOrSignIn.bind(this)} />}
+          
         </div>
+      </div>
+    return (
+      <div className="App">
+        
+        {this.state.user.id ? UserlogIn : <UserDialog onSignUp={this.onSignUpOrSignIn.bind(this)}
+          onSignIn={this.onSignUpOrSignIn.bind(this)} />}
       </div>
     )
   }

@@ -8,12 +8,21 @@ body {
   font-size: 14px;
   padding-left: 10px;
 }
-.App{
+
+.loginWrapper{
   display: flex;
 }
 .main{
   flex: 1;
+}
+.main h1{
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
   padding: 0 15px;
+  background: #1e5799;
+  background: -webkit-linear-gradient(left,#1e5799 1%,#7db9e8 99%);
+  color: #fff;
 }
 .aside{
   width: 250px;
@@ -21,8 +30,12 @@ body {
   border-right: 1px solid #ccc;
 }
 .topbar{
-  height: 32px;
-  background: green;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background: #1e5799;
 }
 .account{
   display: flex;
@@ -59,6 +72,20 @@ body {
   display: flex;
   align-items: center;
   padding: 0 10px;
-  background: orange;
+  margin: 20px 15px 0 15px;
+  background: #3c76b2;
   border-radius: 4px;
+  color:#fff 
+}
+.inputWrapper input::-webkit-input-placeholder{
+  color:#fff !important;
+}
+.inputWrapper input::-moz-input-placeholder{
+  color:#fff !important;
+}
+.inputWrapper input::-ms-input-placeholder{
+  color:#fff !important;
+}
+.todoList{
+  margin: 0 15px;
 }

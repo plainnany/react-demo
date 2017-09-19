@@ -7,11 +7,14 @@
   border-radius: 4px;
   margin-top: 1em;
 }
-.TodoItem>.title{
-  flex-grow: 1;
-  padding: 0 .5em;
+.TodoItem .title{
+  padding: .1em .5em;
 }
+
 .TodoItem label{
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 .icon-unchecked,.icon-checked,.icon-delete{
   font-size: 18px;
@@ -31,6 +34,10 @@
 }
 .TodoItem input:checked ~ .icon-checked{
   display: inline-block;
+}
+.TodoItem input:checked ~ .title{
+  text-decoration-line: line-through;
+  color: #ccc;
 }
 .TodoItem button.icon-delete{
   background: none;

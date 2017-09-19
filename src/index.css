@@ -8,3 +8,57 @@ body {
   font-size: 14px;
   padding-left: 10px;
 }
+.App{
+  display: flex;
+}
+.main{
+  flex: 1;
+  padding: 0 15px;
+}
+.aside{
+  width: 250px;
+  height: 100vh;
+  border-right: 1px solid #ccc;
+}
+.topbar{
+  height: 32px;
+  background: green;
+}
+.account{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+  
+}
+.account span:nth-child(1){
+  flex: 1;
+  font-size: 24px;
+}
+.icon-home{
+  width: 20px;
+  height: 20px;
+  padding-right: 10px;
+  font-size: 20px;
+}
+.icon-logout{
+  font-size: 24px;
+  cursor: pointer;
+}
+.icon-todo{
+  padding: 0 7px 0 3px;
+}
+.aside-content p{
+  line-height: 42px;
+  font-size: 18px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.inputWrapper{
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background: orange;
+  border-radius: 4px;
+}

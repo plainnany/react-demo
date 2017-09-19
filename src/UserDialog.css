@@ -20,8 +20,7 @@
 }
 .UserDialog .signInOrSignUp label{ cursor: pointer; }
 .UserDialog .signInOrSignUp label input{ display: none; }
-/* .UserDialog .signInOrSignUp > nav:first-child{ padding: 1em; margin-left: -2em;}
-.UserDialog .signInOrSignUp > nav:first-child label{ margin-left: 2em; cursor: pointer;} */
+
 .UserDialog .signInOrSignUp > .panes { padding: 0 1em 1em; }
 .UserDialog .signInOrSignUp h3{
     color: #03A9F4;

@@ -1,9 +1,42 @@
 .TodoItem{
+  height: 42px;
   padding: .5em;
   display: flex;
   align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 1em;
 }
 .TodoItem>.title{
   flex-grow: 1;
   padding: 0 .5em;
 }
+.TodoItem label{
+}
+.icon-unchecked,.icon-checked,.icon-delete{
+  font-size: 18px;
+}
+
+.icon-unchecked{
+  display: inline-block;
+}
+.icon-checked{
+  display: none;
+}
+.TodoItem input{
+  display: none;
+}
+.TodoItem input:checked ~ .icon-unchecked{
+  display: none;
+}
+.TodoItem input:checked ~ .icon-checked{
+  display: inline-block;
+}
+.TodoItem button.icon-delete{
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+}
+
